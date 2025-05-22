@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awadhesh Kiran — Digital Space</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f0f0f0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: radial-gradient(circle at center, #1a2a6c, #000428);
+    }
+    header h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #fdbb2d, #22c1c3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #ddd;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .intro {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      margin-bottom: 3rem;
+    }
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .intro p {
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .content-block {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .content-block:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(255,255,255,0.2);
+    }
+
+    .content-block h3 a {
+      font-size: 1.5rem;
+      color: #fdbb2d;
+      text-decoration: none;
+      background: linear-gradient(90deg, #fdbb2d, #f7797d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content-block .date {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .content-block p {
+      color: #ddd;
+    }
+
+    .badge {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      background: #22c1c3;
+      color: #000;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .intro {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Awadhesh Kiran</h1>
+    <p>Simulation Engineer | Researcher | Creative Technologist</p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>About Me</h2>
+      <p>Hi, I'm Awadhesh Kiran, blending physics, computation, and creativity. As a Simulation Engineer passionate about digital twins, fluid mechanics, and innovative modeling, I explore both the scientific and artistic sides of engineering.</p>
+    </section>
+
+    <div class="content-grid">
+      <div class="content-block">
+        <div class="badge">Research</div>
+        <h3><a href="scientific-articles/index.html">Scientific Articles</a></h3>
+        <div class="date">Updated: Feb 2, 2025</div>
+        <p>Explore cutting-edge CFD research, reduced-order modeling, and my contributions to digital twin technologies.</p>
+      </div>
+
+      <div class="content-block">
+        <div class="badge">Art & Design</div>
+        <h3><a href="creativity/index.html">Creativity</a></h3>
+        <div class="date">Updated: Feb 2, 2025</div>
+        <p>Where engineering meets art — browse my visual experiments, design projects, and creative coding explorations.</p>
+      </div>
+
+      <div class="content-block">
+        <div class="badge">Math Models</div>
+        <h3><a href="maths/index.html">Maths</a></h3>
+        <div class="date">Updated: Feb 2, 2025</div>
+        <p>Mathematical tools, simulations, and thought experiments from the intersection of theory and engineering reality.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Awadhesh Kiran. All rights reserved. | Built with HTML & passion.
+  </footer>
+
+</body>
+</html>
+
