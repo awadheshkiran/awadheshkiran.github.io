@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1D Transport Equation | The Elegance of Motion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d0f1b;
+      color: #f2f2f2;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 950px;
+      margin: auto;
+      background: linear-gradient(135deg, #141627, #1d1f33);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #e0b341;
+    }
+    .poetic {
+      font-style: italic;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #cccccc;
+      margin-bottom: 2rem;
+    }
+    .equation {
+      margin: 1.2rem 0;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border-left: 4px solid #ffaa33;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      color: #ffdb99;
+    }
+    h2 {
+      color: #80ffd3;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+    }
+    p {
+      margin-top: 1rem;
+      color: #d3d3d3;
+    }
+    ul {
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+      color: #bbb;
+    }
+    .pulse {
+      width: 15px;
+      height: 15px;
+      background: #ffaa33;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite ease-in-out;
+      margin: 1rem auto;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .code {
+      background: #0c0f18;
+      padding: 0.5rem 1rem;
+      font-family: monospace;
+      border-radius: 5px;
+      color: #88f8ff;
+      margin-top: 1rem;
+      display: block;
+    }
+    .quote {
+      color: #ccc;
+      font-style: italic;
+      margin-top: 1rem;
+      padding-left: 1rem;
+      border-left: 3px solid #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>1D Transport Equation</h1>
+    <div class="poetic">
+      A wave moves. A signal echoes. Information flows without distortion.  
+    </div>
+    
+    <h2>The Governing Principle</h2>
+    <div class="equation">
+      ∂u/∂t + c ∂u/∂x = 0
+    </div>
+    <p>This isn't just an equation. It's the signature of <b>pure motion</b>.</p>
+    
+    <div class="pulse"></div>
+    
+    <h2>Meaning in Motion</h2>
+    <div class="equation">
+      u(x, t) = f(x − c t)
+    </div>
+    <p>Any initial pattern <code>f(x)</code> moves rigidly at speed <code>c</code>. No decay. No distortion.</p>
+
+    <h2>The Language of Characteristics</h2>
+    <div class="equation">
+      dx/dt = c,   du/dt = 0
+    </div>
+    <p>Each point is a passenger on a straight line: a trajectory of pure inheritance.</p>
+
+    <h2>Initial Storytelling</h2>
+    <div class="equation">
+      u(x, 0) = φ(x) ⟹ u(x, t) = φ(x − c t)
+    </div>
+    <p>The initial pulse <code>φ(x)</code> is merely translated. It remembers everything.</p>
+
+    <h2>Numerical Ritual (Upwind Discretization)</h2>
+    <div class="equation">
+      uᵢⁿ⁺¹ = uᵢⁿ − (c Δt/Δx)(uᵢⁿ − uᵢ₋₁ⁿ)
+    </div>
+    <p>If <code>c > 0</code>, take information from behind. If <code>c &lt; 0</code>, from ahead.</p>
+
+    <h2>Why It Matters</h2>
+    <ul>
+      <li>First step to understanding fluid flow and hyperbolic PDEs</li>
+      <li>Governs convection in CFD simulations</li>
+      <li>Appears in electromagnetics, traffic, weather, even finance</li>
+      <li>No entropy generated – this is the cleanest motion possible</li>
+    </ul>
+
+    <h2>The Conservation View</h2>
+    <div class="equation">
+      ∂u/∂t + ∂(c u)/∂x = 0
+    </div>
+    <p>It’s more than motion. It’s conservation of quantity <code>u</code> flowing at speed <code>c</code>.</p>
+
+    <h2>When You Break It (Add Viscosity)</h2>
+    <div class="equation">
+      ∂u/∂t + c ∂u/∂x = ν ∂²u/∂x²
+    </div>
+    <p>Now you get <b>diffusion</b>—smoothing, irreversibility, loss of memory.</p>
+
+    <h2>In a Nutshell</h2>
+    <div class="quote">
+      The 1D transport equation is not about what changes—it's about what **doesn't**.
+    </div>
+  </div>
+</body>
+</html>
+
