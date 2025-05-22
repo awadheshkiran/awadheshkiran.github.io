@@ -116,7 +116,18 @@
       font-size: 0.75rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
+    
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
 
+    .card-link:hover .content-block {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+    }
+    
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -148,27 +159,32 @@
     </section>
 
     <div class="content-grid">
-      <div class="content-block">
-        <div class="badge">Research</div>
-        <h3><a href="scientific-articles/index.html">Articles</a></h3>
-        <div class="date">Updated: Feb 2, 2025</div>
-        <p>A collection examining scientific learning, community engagement.</p>
-      </div>
-
-      <div class="content-block">
-        <div class="badge">Art & Design</div>
-        <h3><a href="creativity/index.html">Creativity</a></h3>
-        <div class="date">Updated: Feb 2, 2025</div>
-        <p> I think, I write !! </p>
-      </div>
-
-      <div class="content-block">
-        <div class="badge">Math Models</div>
-        <h3><a href="maths/index.html">Maths</a></h3>
-        <div class="date">Updated: Feb 2, 2025</div>
-        <p>Mathematical tools, simulations, and thought experiments from the intersection of theory and engineering reality.</p>
-      </div>
+      <a href="scientific-articles/index.html" class="card-link">
+    <div class="content-block">
+      <div class="badge">Research</div>
+      <h3>Articles</h3>
+      <div class="date">Updated: Feb 2, 2025</div>
+      <p>A collection examining scientific learning, community engagement.</p>
     </div>
+  </a>
+
+      <a href="creativity/index.html" class="card-link">
+    <div class="content-block">
+      <div class="badge">Art & Design</div>
+      <h3>Creativity</h3>
+      <div class="date">Updated: Feb 2, 2025</div>
+      <p>I think, I write !!</p>
+    </div>
+  </a>
+
+      <a href="maths/index.html" class="card-link">
+    <div class="content-block">
+      <div class="badge">Math Models</div>
+      <h3>Maths</h3>
+      <div class="date">Updated: Feb 2, 2025</div>
+      <p>Mathematical tools, simulations, and thought experiments from the intersection of theory and engineering reality.</p>
+    </div>
+  </a>
   </main>
 
   <footer>

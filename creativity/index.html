@@ -11,6 +11,7 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -19,58 +20,81 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
 
     h1 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       background: linear-gradient(90deg, #fdbb2d, #22c1c3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 3rem;
     }
 
-    .article {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
       border-radius: 15px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
+      overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
 
-    .article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
     }
 
-    .article h2 a {
-      font-size: 1.5rem;
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .card-content h2 a {
+      font-size: 1.3rem;
       text-decoration: none;
       background: linear-gradient(90deg, #f7797d, #FBD786);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .article p {
+    .card-content p {
       margin-top: 0.5rem;
       color: #ccc;
+      font-size: 0.95rem;
     }
-
-    a:hover {
-      opacity: 0.9;
+    
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .card-link:hover .card {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
     }
 
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
-      }
-      .article {
-        padding: 1.2rem;
       }
     }
   </style>
@@ -79,22 +103,43 @@
   <div class="container">
     <h1>Creativity</h1>
 
-    <div class="article">
-      <h2><a href="vandu.html">വണ്ട്</a></h2>
-      <p>  </p>
-    </div>
+    <div class="grid">
+  	<!-- Card 1 -->
+  	<a href="vandu.html" class="card-link">
+    	<div class="card">
+      	<img src="vandu.jpg" alt="വണ്ട്">
+      	<div class="card-content">
+        	<h2>വണ്ട്</h2>
+        	<p>Short poetic piece inspired by nature’s tiniest beings.</p>
+     	 </div>
+    	</div>
+  	</a>
 
-    <!-- Add more articles in this structure -->
-    <div class="article">
-      <h2><a href="Thooval.html">തൂവൽ</a></h2>
-      <p>  </p>
+      <!-- Card 2 -->
+  <a href="Thooval.html" class="card-link">
+    <div class="card">
+      <img src="thooval.jpg" alt="തൂവൽ">
+      <div class="card-content">
+        <h2>തൂവൽ</h2>
+        <p>Feather-light emotions and drifting memories in verse.</p>
+      </div>
     </div>
+  </a>
 
-    <div class="article">
-      <h2><a href="Marakkilla.html">മറക്കില്ല നിന്നെ</a></h2>
-      <p> </p>
+      <!-- Card 3 -->
+  <a href="Marakkilla.html" class="card-link">
+    <div class="card">
+      <img src="marakkilla.jpg" alt="മറക്കില്ല നിന്നെ">
+      <div class="card-content">
+        <h2>മറക്കില്ല നിന്നെ</h2>
+        <p>A creative expression of unforgettable presence.</p>
+      </div>
     </div>
+  </a>
 
+      <!-- Add more cards as needed -->
+
+    </div>
   </div>
 </body>
 </html>
