@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mass Transport (FVM) - Awadhesh Kiran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #f0f0f0;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #ff9966, #ff5e62);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #ffcc70;
+    }
+    p {
+      margin: 1rem 0;
+      color: #e0e0e0;
+    }
+    ul {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    ul li {
+      margin-bottom: 0.8rem;
+      color: #d3d3d3;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 1.5rem auto 2rem auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .container {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Transport of Mass – FVM Way</h1>
+
+    <p>
+      Mass doesn’t vanish or pop out of nowhere – it simply moves. That’s essentially what conservation of mass tells us. So let’s look at how to capture this motion using the Finite Volume Method (FVM).
+    </p>
+
+    <h2>The Setup</h2>
+    <p>
+      Imagine a pipe. Or maybe just a 1D domain chopped into segments – we call these <em>control volumes</em>. The mass in each segment changes only if it flows in or out. That’s all FVM tries to track – inflow, outflow, and the result of it.
+    </p>
+
+    <h2>Starting Point – The Integral Form</h2>
+    <p>
+      The mass conservation equation in integral form is written like this:
+    </p>
+
+    <p style="text-align:center;">
+      d/dt ∫<sub>V</sub> ρ dV + ∫<sub>∂V</sub> ρu·n dA = 0
+    </p>
+
+    <p>
+      Where:<br>
+      - ρ is the density<br>
+      - u is the velocity<br>
+      - V is the control volume<br>
+      - ∂V is its surface<br>
+      The first term is the rate of change of mass, and the second is net mass flow through the surface.
+    </p>
+
+    <h2>Now, Break It Down – Control Volumes</h2>
+    <p>
+      Divide the domain into N cells. Each cell i has a left face (i-1/2) and a right face (i+1/2). So we say:
+    </p>
+
+    <p style="text-align:center;">
+      d(ρ<sub>i</sub>V<sub>i</sub>)/dt + (F<sub>i+1/2</sub> - F<sub>i-1/2</sub>) = 0
+    </p>
+
+    <p>
+      The flux terms F represent mass flow rate through faces:
+    </p>
+
+    <p style="text-align:center;">
+      F = ρuA
+    </p>
+
+    <h2>Discretization – Let’s Get Numbers</h2>
+    <p>
+      We typically approximate the flux using values from neighboring cells. If we know velocity and density at each face, we plug them in.
+      One common trick: use <em>upwind</em> schemes – pick values based on flow direction. If flow is from left to right, use the left cell’s value at the face.
+    </p>
+
+    <h2>So What Happens Next?</h2>
+    <p>
+      Once we know all the fluxes, we compute how much mass is lost or gained in each control volume over a time step Δt.
+    </p>
+
+    <p style="text-align:center;">
+      ρ<sub>i</sub><sup>n+1</sup> = ρ<sub>i</sub><sup>n</sup> - (Δt / V<sub>i</sub>) × (F<sub>i+1/2</sub> - F<sub>i-1/2</sub>)
+    </p>
+
+    <p>
+      And that’s it. Update each cell. Time marches on. Mass is conserved.
+    </p>
+
+    <h2>What’s Beautiful Here?</h2>
+    <ul>
+      <li>FVM respects conservation laws naturally.</li>
+      <li>No need to differentiate wildly – integration rules the stage.</li>
+      <li>It works well on irregular grids, not just pretty ones.</li>
+    </ul>
+
+    <p>
+      That’s a small glimpse of how mass travels through a system, and how we simulate it in computers using FVM.
+    </p>
+
+    <p>
+      Cheers,<br>
+      Awadhesh Kiran
+    </p>
+
+  </div>
+</body>
+</html>
+
