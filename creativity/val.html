@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question for You...</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffeef2;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 75, 110, 0.15);
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .heart {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #ff4b6e;
+        }
+
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            height: 70px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        #yesBtn {
+            background-color: #ff4b6e;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 75, 110, 0.4);
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+            background-color: #e63958;
+        }
+
+        #noBtn {
+            background-color: #6c757d;
+            color: white;
+            position: relative;
+        }
+
+        #noBtn:hover {
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" id="mainCard">
+        <div class="heart">❤️</div>
+
+        <h1>
+            Velentine's day kk entha paripady !!? <br>
+            Povualle 😉
+        </h1>
+
+        <div class="btn-wrap">
+            <button id="yesBtn" onclick="celebrate()">YES</button>
+            <button id="noBtn" onmouseover="escapeBtn()">NO</button>
+        </div>
+    </div>
+
+    <div class="card hidden" id="successCard">
+        <div class="heart">🔥</div>
+        <h1>Enikk ariyarnnu</h1>
+        <p style="font-size: 1.2rem; color: #555;">
+            Nammal entha plan cheyyane !!??<br>
+            
+        </p>
+        <p>📍 </p>
+    </div>
+
+    <script>
+        function escapeBtn() {
+            const noBtn = document.getElementById("noBtn");
+
+            // Small, visible movement range
+            const moveX = (Math.random() * 140) - 70; // -70 to +70 px
+            const moveY = (Math.random() * 100) - 50; // -50 to +50 px
+
+            noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+
+        function celebrate() {
+            document.getElementById("mainCard").classList.add("hidden");
+            document.getElementById("successCard").classList.remove("hidden");
+            console.log("YES clicked!");
+        }
+    </script>
+
+</body>
+</html>
+
